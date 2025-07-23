@@ -1,0 +1,91 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --jazz-orange: #D2691E;
+  --jazz-gold: #DAA520;
+  --jazz-copper: #B87333;
+  --jazz-dark: #1A0F0A;
+  --jazz-cream: #FFF8DC;
+  --jazz-shadow: rgba(210, 105, 30, 0.3);
+}
+
+body {
+  @apply bg-gradient-to-br from-amber-950 via-orange-950 to-stone-950;
+  font-family: 'Inter', sans-serif;
+  color: #FFF8DC;
+  background-attachment: fixed;
+}
+
+.art-deco-border {
+  position: relative;
+}
+
+.art-deco-border::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, var(--jazz-orange), var(--jazz-gold), var(--jazz-copper));
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.jazz-gradient {
+  background: linear-gradient(135deg, var(--jazz-orange) 0%, var(--jazz-gold) 50%, var(--jazz-copper) 100%);
+}
+
+.jazz-text-gradient {
+  background: linear-gradient(135deg, var(--jazz-orange) 0%, var(--jazz-gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass-effect {
+  background: rgba(26, 15, 10, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(210, 105, 30, 0.2);
+}
+
+.vinyl-shadow {
+  box-shadow: 
+    0 4px 20px rgba(210, 105, 30, 0.3),
+    0 8px 40px rgba(218, 165, 32, 0.2),
+    inset 0 1px 0 rgba(255, 248, 220, 0.1);
+}
+
+.playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+.art-deco-pattern {
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(210, 105, 30, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(218, 165, 32, 0.1) 0%, transparent 50%);
+}
+
+@keyframes jazz-pulse {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+.jazz-pulse {
+  animation: jazz-pulse 2s ease-in-out infinite;
+}
+
+.hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 
+    0 20px 40px rgba(210, 105, 30, 0.4),
+    0 10px 20px rgba(218, 165, 32, 0.3);
+}
